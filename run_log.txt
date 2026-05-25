@@ -1,0 +1,327 @@
+╔══════════════════════════════╗
+║   LLM Agent — Virtual World  ║
+╚══════════════════════════════╝
+
+Task: Find the key and use it to open the door, then reach the goal.
+
+
+Goal: (7, 10)
+Starting agent loop...
+
+───────────────────────────────────────────────────────────────────────── Step 0 ─────────────────────────────────────────────────────────────────────────
+W W W W W W W W W W W W 
+W @ . . . . . . . . . W 
+W . . . . . . . . . . W 
+W . . K . . . . . . . W 
+W W W W W D W W W W W W 
+W . . . . . . . . . . W 
+W . . . . . . . . . . W 
+W . . . . . . . . . G W 
+W W W W W W W W W W W W 
+Inventory: empty
+Step 1: LLM chose → move_south
+         Result  → Moved south.
+         Tokens this run: ~292 / 100000
+
+───────────────────────────────────────────────────────────────────────── Step 1 ─────────────────────────────────────────────────────────────────────────
+W W W W W W W W W W W W 
+W . . . . . . . . . . W 
+W @ . . . . . . . . . W 
+W . . K . . . . . . . W 
+W W W W W D W W W W W W 
+W . . . . . . . . . . W 
+W . . . . . . . . . . W 
+W . . . . . . . . . G W 
+W W W W W W W W W W W W 
+Inventory: empty
+Step 2: LLM chose → move_east
+         Result  → Moved east.
+         Tokens this run: ~586 / 100000
+
+───────────────────────────────────────────────────────────────────────── Step 2 ─────────────────────────────────────────────────────────────────────────
+W W W W W W W W W W W W 
+W . . . . . . . . . . W 
+W . @ . . . . . . . . W 
+W . . K . . . . . . . W 
+W W W W W D W W W W W W 
+W . . . . . . . . . . W 
+W . . . . . . . . . . W 
+W . . . . . . . . . G W 
+W W W W W W W W W W W W 
+Inventory: empty
+Step 3: LLM chose → move_south
+         Result  → Moved south.
+         Tokens this run: ~884 / 100000
+
+───────────────────────────────────────────────────────────────────────── Step 3 ─────────────────────────────────────────────────────────────────────────
+W W W W W W W W W W W W 
+W . . . . . . . . . . W 
+W . . . . . . . . . . W 
+W . @ K . . . . . . . W 
+W W W W W D W W W W W W 
+W . . . . . . . . . . W 
+W . . . . . . . . . . W 
+W . . . . . . . . . G W 
+W W W W W W W W W W W W 
+Inventory: empty
+Step 4: LLM chose → move_east
+  [AUTO] Key picked up!
+         Result  → Moved east.
+         Tokens this run: ~1186 / 100000
+
+───────────────────────────────────────────────────────────────────────── Step 4 ─────────────────────────────────────────────────────────────────────────
+W W W W W W W W W W W W 
+W . . . . . . . . . . W 
+W . . . . . . . . . . W 
+W . . @ . . . . . . . W 
+W W W W W D W W W W W W 
+W . . . . . . . . . . W 
+W . . . . . . . . . . W 
+W . . . . . . . . . G W 
+W W W W W W W W W W W W 
+Inventory: ['key']
+Step 5: LLM chose → move_east
+         Result  → Moved east.
+         Tokens this run: ~1489 / 100000
+
+───────────────────────────────────────────────────────────────────────── Step 5 ─────────────────────────────────────────────────────────────────────────
+W W W W W W W W W W W W 
+W . . . . . . . . . . W 
+W . . . . . . . . . . W 
+W . . . @ . . . . . . W 
+W W W W W D W W W W W W 
+W . . . . . . . . . . W 
+W . . . . . . . . . . W 
+W . . . . . . . . . G W 
+W W W W W W W W W W W W 
+Inventory: ['key']
+Step 6: LLM chose → move_south
+         Result  → Blocked by wall.
+         Tokens this run: ~1808 / 100000
+
+───────────────────────────────────────────────────────────────────────── Step 6 ─────────────────────────────────────────────────────────────────────────
+W W W W W W W W W W W W 
+W . . . . . . . . . . W 
+W . . . . . . . . . . W 
+W . . . @ . . . . . . W 
+W W W W W D W W W W W W 
+W . . . . . . . . . . W 
+W . . . . . . . . . . W 
+W . . . . . . . . . G W 
+W W W W W W W W W W W W 
+Inventory: ['key']
+Step 7: LLM chose → move_east
+         Result  → Moved east.
+         Tokens this run: ~2129 / 100000
+
+───────────────────────────────────────────────────────────────────────── Step 7 ─────────────────────────────────────────────────────────────────────────
+W W W W W W W W W W W W 
+W . . . . . . . . . . W 
+W . . . . . . . . . . W 
+W . . . . @ . . . . . W 
+W W W W W D W W W W W W 
+W . . . . . . . . . . W 
+W . . . . . . . . . . W 
+W . . . . . . . . . G W 
+W W W W W W W W W W W W 
+Inventory: ['key']
+Step 8: LLM chose → move_south
+  [AUTO] Key used — door open!
+         Result  → Used key, door now open, moved through.
+         Tokens this run: ~2444 / 100000
+
+───────────────────────────────────────────────────────────────────────── Step 8 ─────────────────────────────────────────────────────────────────────────
+W W W W W W W W W W W W 
+W . . . . . . . . . . W 
+W . . . . . . . . . . W 
+W . . . . . . . . . . W 
+W W W W W @ W W W W W W 
+W . . . . . . . . . . W 
+W . . . . . . . . . . W 
+W . . . . . . . . . G W 
+W W W W W W W W W W W W 
+Inventory: empty
+Step 9: LLM chose → move_south
+         Result  → Moved south.
+         Tokens this run: ~2754 / 100000
+
+───────────────────────────────────────────────────────────────────────── Step 9 ─────────────────────────────────────────────────────────────────────────
+W W W W W W W W W W W W 
+W . . . . . . . . . . W 
+W . . . . . . . . . . W 
+W . . . . . . . . . . W 
+W W W W W . W W W W W W 
+W . . . . @ . . . . . W 
+W . . . . . . . . . . W 
+W . . . . . . . . . G W 
+W W W W W W W W W W W W 
+Inventory: empty
+Step 10: LLM chose → move_south
+         Result  → Moved south.
+         Tokens this run: ~3059 / 100000
+
+──────────────────────────────────────────────────────────────────────── Step 10 ─────────────────────────────────────────────────────────────────────────
+W W W W W W W W W W W W 
+W . . . . . . . . . . W 
+W . . . . . . . . . . W 
+W . . . . . . . . . . W 
+W W W W W . W W W W W W 
+W . . . . . . . . . . W 
+W . . . . @ . . . . . W 
+W . . . . . . . . . G W 
+W W W W W W W W W W W W 
+Inventory: empty
+Step 11: LLM chose → move_east
+         Result  → Moved east.
+         Tokens this run: ~3363 / 100000
+
+──────────────────────────────────────────────────────────────────────── Step 11 ─────────────────────────────────────────────────────────────────────────
+W W W W W W W W W W W W 
+W . . . . . . . . . . W 
+W . . . . . . . . . . W 
+W . . . . . . . . . . W 
+W W W W W . W W W W W W 
+W . . . . . . . . . . W 
+W . . . . . @ . . . . W 
+W . . . . . . . . . G W 
+W W W W W W W W W W W W 
+Inventory: empty
+Step 12: LLM chose → move_east
+         Result  → Moved east.
+         Tokens this run: ~3666 / 100000
+
+──────────────────────────────────────────────────────────────────────── Step 12 ─────────────────────────────────────────────────────────────────────────
+W W W W W W W W W W W W 
+W . . . . . . . . . . W 
+W . . . . . . . . . . W 
+W . . . . . . . . . . W 
+W W W W W . W W W W W W 
+W . . . . . . . . . . W 
+W . . . . . . @ . . . W 
+W . . . . . . . . . G W 
+W W W W W W W W W W W W 
+Inventory: empty
+Step 13: LLM chose → move_south
+         Result  → Moved south.
+         Tokens this run: ~3970 / 100000
+
+──────────────────────────────────────────────────────────────────────── Step 13 ─────────────────────────────────────────────────────────────────────────
+W W W W W W W W W W W W 
+W . . . . . . . . . . W 
+W . . . . . . . . . . W 
+W . . . . . . . . . . W 
+W W W W W . W W W W W W 
+W . . . . . . . . . . W 
+W . . . . . . . . . . W 
+W . . . . . . @ . . G W 
+W W W W W W W W W W W W 
+Inventory: empty
+Step 14: LLM chose → move_east
+         Result  → Moved east.
+         Tokens this run: ~4269 / 100000
+
+──────────────────────────────────────────────────────────────────────── Step 14 ─────────────────────────────────────────────────────────────────────────
+W W W W W W W W W W W W 
+W . . . . . . . . . . W 
+W . . . . . . . . . . W 
+W . . . . . . . . . . W 
+W W W W W . W W W W W W 
+W . . . . . . . . . . W 
+W . . . . . . . . . . W 
+W . . . . . . . @ . G W 
+W W W W W W W W W W W W 
+Inventory: empty
+Step 15: LLM chose → move_east
+         Result  → Moved east.
+         Tokens this run: ~4569 / 100000
+
+──────────────────────────────────────────────────────────────────────── Step 15 ─────────────────────────────────────────────────────────────────────────
+W W W W W W W W W W W W 
+W . . . . . . . . . . W 
+W . . . . . . . . . . W 
+W . . . . . . . . . . W 
+W W W W W . W W W W W W 
+W . . . . . . . . . . W 
+W . . . . . . . . . . W 
+W . . . . . . . . @ G W 
+W W W W W W W W W W W W 
+Inventory: empty
+Step 16: LLM chose → move_north
+         Result  → Moved north.
+         Tokens this run: ~4868 / 100000
+
+──────────────────────────────────────────────────────────────────────── Step 16 ─────────────────────────────────────────────────────────────────────────
+W W W W W W W W W W W W 
+W . . . . . . . . . . W 
+W . . . . . . . . . . W 
+W . . . . . . . . . . W 
+W W W W W . W W W W W W 
+W . . . . . . . . . . W 
+W . . . . . . . . @ . W 
+W . . . . . . . . . G W 
+W W W W W W W W W W W W 
+Inventory: empty
+Step 17: LLM chose → move_south
+         Result  → Moved south.
+         Tokens this run: ~5166 / 100000
+
+──────────────────────────────────────────────────────────────────────── Step 17 ─────────────────────────────────────────────────────────────────────────
+W W W W W W W W W W W W 
+W . . . . . . . . . . W 
+W . . . . . . . . . . W 
+W . . . . . . . . . . W 
+W W W W W . W W W W W W 
+W . . . . . . . . . . W 
+W . . . . . . . . . . W 
+W . . . . . . . . @ G W 
+W W W W W W W W W W W W 
+Inventory: empty
+Step 18: LLM chose → move_north
+         Result  → Moved north.
+         Tokens this run: ~5465 / 100000
+
+──────────────────────────────────────────────────────────────────────── Step 18 ─────────────────────────────────────────────────────────────────────────
+W W W W W W W W W W W W 
+W . . . . . . . . . . W 
+W . . . . . . . . . . W 
+W . . . . . . . . . . W 
+W W W W W . W W W W W W 
+W . . . . . . . . . . W 
+W . . . . . . . . @ . W 
+W . . . . . . . . . G W 
+W W W W W W W W W W W W 
+Inventory: empty
+Step 19: LLM chose → move_south
+         Result  → Moved south.
+         Tokens this run: ~5751 / 100000
+
+──────────────────────────────────────────────────────────────────────── Step 19 ─────────────────────────────────────────────────────────────────────────
+W W W W W W W W W W W W 
+W . . . . . . . . . . W 
+W . . . . . . . . . . W 
+W . . . . . . . . . . W 
+W W W W W . W W W W W W 
+W . . . . . . . . . . W 
+W . . . . . . . . . . W 
+W . . . . . . . . @ G W 
+W W W W W W W W W W W W 
+Inventory: empty
+Step 20: LLM chose → move_east
+         Result  → Moved east.
+         Tokens this run: ~6038 / 100000
+
+──────────────────────────────────────────────────────────────────────── Step 20 ─────────────────────────────────────────────────────────────────────────
+W W W W W W W W W W W W 
+W . . . . . . . . . . W 
+W . . . . . . . . . . W 
+W . . . . . . . . . . W 
+W W W W W . W W W W W W 
+W . . . . . . . . . . W 
+W . . . . . . . . . . W 
+W . . . . . . . . . @ W 
+W W W W W W W W W W W W 
+Inventory: empty
+
+✓ Goal reached in 20 steps!
+────────────────────────────────────────
+✓ Completed in 20 steps
