@@ -3,7 +3,7 @@
 ## Setup
 1. Clone the repo
 2. Install dependencies: pip install -r requirements.txt
-3. Copy .env.example to .env and add your Groq API key
+3. Create a .env file and and add your Groq API key like this: "GROQ_API_KEY=[your groq api key]"
    - Get a free key at console.groq.com
 
 ## Running
